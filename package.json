@@ -1,0 +1,28 @@
+{
+  "name": "odata2ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "compile": "tsc -p .",
+    "odata2oapi": "node dist/odata2openapi.js",
+    "oapi2ts": "node dist/openapi2ts.js",
+    "start": "node dist/bin/odata2ts.js",
+    "prestart": "npm run compile"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "glob": "^8.0.3",
+    "prettier": "^2.7.1",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/glob": "^7.2.0",
+    "@types/prettier": "^2.6.3",
+    "typescript": "^4.7.4"
+  }
+}
