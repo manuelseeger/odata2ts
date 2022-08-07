@@ -49,18 +49,18 @@ export class OData2Ts {
             
             if (this.options.generateCodeListEnums) {
                 const codelistDir = path.join(path.dirname(f), path.basename(f).replace('$metadata.xml', '.codelists'));
+                const codelists: Map<string, CodeList[]> = new Map();
                 if (await fs.pathExists(codelistDir)) {
                     const globPath = codelistDir.replace(/\\/g, '/') + '/*';
                     const codelistFiles = glob.sync(globPath);
-
-                    const codelists: Map<string, CodeList[]> = new Map();
+                    
                     for (let cf of codelistFiles) {
                         let codelistjson = await fs.readFile(cf);
                         let codelist = parseCodeList(codelistjson);
                         codelists.set(path.basename(cf).replace('.json', ''), codelist)
                     }
-                    this.transformer.setCodelists(codelists);
                 }
+                this.transformer.setCodelists(codelists);
             }
 
             const types = this.transformer.transform(metadataJs);

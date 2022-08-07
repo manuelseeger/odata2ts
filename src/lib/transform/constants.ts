@@ -11,6 +11,7 @@ const edmTypeMap = <Record<string, string>>{
     'Edm.Int16': 'number',
     'Edm.TimeOfDay': 'Date',
     'Edm.DateTimeOffset': 'Date',
+    'Edm.DateTime': 'Date',
     'Edm.Time': 'Date',
     'Edm.Guid': 'string'
 }
