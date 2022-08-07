@@ -6,5 +6,5 @@ export interface EntityProperty {
   $ref?: any;
   enum?: Array<any>;
   wrapValueInQuotesInUrls: boolean;
-  $?:Array<Record<string, string>>
+  $?:Map<string, string>;
 }
