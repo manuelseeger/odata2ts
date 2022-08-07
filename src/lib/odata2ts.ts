@@ -8,14 +8,14 @@ import parseCodeList, { CodeList } from './codelists/codelists.js';
 export interface TransformOptions {
     sourceDir: string;
     targetDir: string;
-    metadataExtension: string;
+    metadataExtension?: string;
     source?: string;
     generateCodeListEnums?: boolean
 }
 
 const TransformDefaultOptions: TransformOptions = {
     sourceDir: '',
-    targetDir: '',
+    targetDir: 'out',
     metadataExtension: 'xml',
     generateCodeListEnums: false
 }
