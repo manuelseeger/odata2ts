@@ -22,3 +22,9 @@ Take options from config file
 This was originally built for SAP C4C which provides an OData vocabulary for value lists ('code lists') for properties. 
 
 Enable parsing of code lists with the ```--c4c``` option. The code lists are expected in JSON format in a subdirectory named codelists from the metadata file.
+
+## Acknowledgment
+
+The  [parser](src/lib/parser/) for OData metadata to JS was taken over from [elasticio/odata2openapi](https://github.com/elasticio/odata2openapi).
+
+Only minor details of the parser have been adapted. 

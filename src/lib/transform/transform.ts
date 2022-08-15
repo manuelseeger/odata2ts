@@ -51,10 +51,6 @@ export class Transformer implements ITransformer {
     }
 
     transformEnums(enumName: string, codelist: CodeList[]): string {
-        /*let result = `enum ${enumName.replace(/Collection$/, '')} {\n`;
-        result += codelist.map(c => `'${c.Code}'`).join(',\n')
-        result += '\n}\n';
-        return result;*/
         let result = `export type  ${enumName.replace(/Collection$/, '')} = `;
         if (codelist.length) {
             result += codelist.map(c => `'${c.Code}'`).join('|')

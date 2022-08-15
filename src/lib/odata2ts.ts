@@ -42,6 +42,10 @@ export class OData2Ts {
             metadataFiles = glob.sync(globPath);
         }
 
+        if (metadataFiles.length == 0) {
+            throw new Error('No metadata files found at source location');
+        }
+
         for (let f of metadataFiles) {
             console.log(f);
             const metadataXml = await fs.readFile(f);
