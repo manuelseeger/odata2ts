@@ -44,10 +44,14 @@ import { Command } from 'commander';
             config.metadataExtension = 'xml';
         }
     }
+
+    if (program.args.length) {
+        config.source = program.args[0];
+    }
     config.generateCodeListEnums = options.c4c;
 
-    if (!config.sourceDir.length) {
-        console.log('error: Either provide sourceDir command line or config file');
+    if (!config.sourceDir && !config.source) {
+        console.log('error: Either provide sourceDir, source command line, or config file');
     }
 
     const odata2ts = new OData2Ts(config);

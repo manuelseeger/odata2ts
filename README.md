@@ -17,11 +17,17 @@ Take options from config file
 > odata2ts --config odata2ts.config.json
 ```
 
+## Features
+
+Parses entities and properties from OData metadata into Typescript types. 
+
+Does not parse actions, functions, navigational properties, annotations, or any other OData feature other than entities and properties. 
+
 ## C4C vocabulary extensions
 
 This was originally built for SAP C4C which provides an OData vocabulary for value lists ('code lists') for properties. 
 
-Enable parsing of code lists with the ```--c4c``` option. The code lists are expected in JSON format in a subdirectory named codelists from the metadata file.
+Enable parsing of code lists with the ```--c4c``` option. The code lists are expected in JSON format in a subdirectory named ```<servicename>.codelists``` from the metadata file.
 
 ## Acknowledgment
 

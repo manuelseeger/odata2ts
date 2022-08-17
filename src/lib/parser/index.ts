@@ -16,6 +16,4 @@ export * from './Definitions';
 export * from './Options';
 export * from './Parameter';
 export * from './Reference';
-export * from './SecurityDefinition';
-export * from './SecurityDefinitions';
-export * from './SecurityRequirement';
+

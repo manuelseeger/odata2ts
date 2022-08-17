@@ -78,10 +78,13 @@ export class Transformer implements ITransformer {
             const codelistName = property.$['c4c:value-help'] as string;
             result += codelistName.replace(/Collection$/, '');
         } else {
-            result += property.type ? edmTypeMap[property.type] : 'any';
+            if (property.type && edmTypeMap[property.type]) {
+                result += edmTypeMap[property.type];
+            } else {
+                result += 'unknown';
+            }            
         }
         result += ';\n';
         return result;
     }
 }
-

@@ -13,7 +13,8 @@ const edmTypeMap = <Record<string, string>>{
     'Edm.DateTimeOffset': 'Date',
     'Edm.DateTime': 'Date',
     'Edm.Time': 'Date',
-    'Edm.Guid': 'string'
+    'Edm.Guid': 'string',
+    'Edm.Binary': 'string'
 }
 
 export {
