@@ -11,12 +11,12 @@ import { Command } from 'commander';
         .option('-t, --targetDir <dir>', 'target directory for typescript files (default: "out")')
         .option('-m, --metadataExtension <ext>', 'file extension of metadata file (default: "xml")')
         .option('--c4c', 'use SAP C4C metadata vocabulary')
-        .argument('[source]', 'specific metadate file to parse');
+        .argument('[source]', 'specific metadata file to parse');
     program.addHelpText('after', '\nOne of source, sourceDir, or config file required');
     program.parse();
-    const options = program.opts();
+    const cliOptions = program.opts();
 
-    let configFilePath = options.config;
+    let configFilePath = cliOptions.config;
     let config;
     if (!path.isAbsolute(configFilePath)) {
         configFilePath = path.join(process.cwd(), configFilePath);
@@ -27,27 +27,27 @@ import { Command } from 'commander';
         config = <TransformOptions> {};
     }
 
-    if (options.sourceDir) {
-        config.sourceDir = options.sourceDir;
+    if (cliOptions.sourceDir) {
+        config.sourceDir = cliOptions.sourceDir;
     }
-    if (options.targetDir) {
-        config.targetDir = options.targetDir;
+    if (cliOptions.targetDir) {
+        config.targetDir = cliOptions.targetDir;
     } else {
         if (config.targetDir == undefined) {
             config.targetDir = 'out';
         }
     }
-    if (options.metadataExtension) {
-        config.metadataExtension = options.metadataExtension;
+    if (cliOptions.metadataExtension) {
+        config.metadataExtension = cliOptions.metadataExtension;
     } else {
         if (config.metadataExtension == undefined) {
             config.metadataExtension = 'xml';
         }
     }
-    config.generateCodeListEnums = options.c4c;
+    config.generateCodeListEnums = cliOptions.c4c;
 
-    if (!config.sourceDir.length) {
-        console.log('error: Either provide sourceDir command line or config file');
+    if (!config.sourceDir && !config.source && !config.source) {
+        console.log('error: Either provide sourceDir, source command line, or config file');
     }
 
     const odata2ts = new OData2Ts(config);

@@ -7,16 +7,11 @@ import parserTypescript from "prettier/parser-typescript.js";
 import _ from 'lodash';
 import { CodeList } from '../codelists/codelists.js';
 
-export interface ITransformer {
-    setCodelists(codelist: Map<string, CodeList[]>): void;
-    transform(metadata: Service): string;
-}
-
 export interface ConvertorOptions {
     propertyCallback: CallableFunction;
 }
 
-export class Transformer implements ITransformer {
+export class Transformer {
     private codelists: Map<string, CodeList[]> = new Map();
     constructor() {
         
