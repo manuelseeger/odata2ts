@@ -6,9 +6,9 @@ export namespace NorthwindModel {
 
     Description?: string;
 
-    Picture?: undefined;
+    Picture?: string;
 
-    Products?: undefined;
+    Products?: unknown;
   }
 
   export interface CustomerDemographic {
@@ -16,7 +16,7 @@ export namespace NorthwindModel {
 
     CustomerDesc?: string;
 
-    Customers?: undefined;
+    Customers?: unknown;
   }
 
   export interface Customer {
@@ -42,9 +42,9 @@ export namespace NorthwindModel {
 
     Fax?: string;
 
-    Orders?: undefined;
+    Orders?: unknown;
 
-    CustomerDemographics?: undefined;
+    CustomerDemographics?: unknown;
   }
 
   export interface Employee {
@@ -76,7 +76,7 @@ export namespace NorthwindModel {
 
     Extension?: string;
 
-    Photo?: undefined;
+    Photo?: string;
 
     Notes?: string;
 
@@ -84,13 +84,13 @@ export namespace NorthwindModel {
 
     PhotoPath?: string;
 
-    Employees1?: undefined;
+    Employees1?: unknown;
 
-    Employee1?: any;
+    Employee1?: unknown;
 
-    Orders?: undefined;
+    Orders?: unknown;
 
-    Territories?: undefined;
+    Territories?: unknown;
   }
 
   export interface Order_Detail {
@@ -104,9 +104,9 @@ export namespace NorthwindModel {
 
     Discount: number;
 
-    Order?: any;
+    Order?: unknown;
 
-    Product?: any;
+    Product?: unknown;
   }
 
   export interface Order {
@@ -138,13 +138,13 @@ export namespace NorthwindModel {
 
     ShipCountry?: string;
 
-    Customer?: any;
+    Customer?: unknown;
 
-    Employee?: any;
+    Employee?: unknown;
 
-    Order_Details?: undefined;
+    Order_Details?: unknown;
 
-    Shipper?: any;
+    Shipper?: unknown;
   }
 
   export interface Product {
@@ -168,11 +168,11 @@ export namespace NorthwindModel {
 
     Discontinued: boolean;
 
-    Category?: any;
+    Category?: unknown;
 
-    Order_Details?: undefined;
+    Order_Details?: unknown;
 
-    Supplier?: any;
+    Supplier?: unknown;
   }
 
   export interface Region {
@@ -180,7 +180,7 @@ export namespace NorthwindModel {
 
     RegionDescription: string;
 
-    Territories?: undefined;
+    Territories?: unknown;
   }
 
   export interface Shipper {
@@ -190,7 +190,7 @@ export namespace NorthwindModel {
 
     Phone?: string;
 
-    Orders?: undefined;
+    Orders?: unknown;
   }
 
   export interface Supplier {
@@ -218,7 +218,7 @@ export namespace NorthwindModel {
 
     HomePage?: string;
 
-    Products?: undefined;
+    Products?: unknown;
   }
 
   export interface Territory {
@@ -228,9 +228,9 @@ export namespace NorthwindModel {
 
     RegionID: number;
 
-    Region?: any;
+    Region?: unknown;
 
-    Employees?: undefined;
+    Employees?: unknown;
   }
 
   export interface Alphabetical_list_of_product {

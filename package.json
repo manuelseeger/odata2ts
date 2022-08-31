@@ -3,11 +3,10 @@
   "version": "0.0.1",
   "description": "Generate Typescript types from OData metadata",
   "author": "Manuel Seeger",
-  "type": "module",
   "license": "MIT",
   "scripts": {
     "compile": "tsc -p .",
-    "start": "node dist/bin/odata2ts.js",
+    "start": "node dist/bin/odata2ts.js example/Northwind$metadata.xml",
     "prestart": "npm run compile",
     "test": "jest",
     "pretest": "npm run compile"
@@ -31,6 +30,17 @@
     "typescript": "^4.7.4"
   },
   "jest": {
-    "preset": "ts-jest/presets/default-esm"
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.(ts)$": "ts-jest"
+    },
+    "roots": [
+      "<rootDir>/tests/"
+    ],
+    "rootDir": ".",
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    }
   }
 }

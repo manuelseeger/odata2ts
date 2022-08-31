@@ -55,6 +55,10 @@ import { Command } from "commander";
       config.targetDir = "out";
     }
   }
+
+  if (program.args) {
+    config.source = program.args[0];
+  }
   if (cliOptions.metadataExtension) {
     config.metadataExtension = cliOptions.metadataExtension;
   } else {
@@ -64,7 +68,7 @@ import { Command } from "commander";
   }
   config.generateCodeListEnums = cliOptions.c4c;
 
-  if (!config.sourceDir && !config.source && !config.source) {
+  if (!config.sourceDir && !config.source) {
     console.log(
       "error: Either provide sourceDir, source command line, or config file"
     );
