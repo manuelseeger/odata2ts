@@ -79,8 +79,8 @@ export class OData2Ts {
         const codelistFiles = glob.sync(globPath);
 
         for (let cf of codelistFiles) {
-          let codelistjson = await fs.readFile(cf);
-          let codelist = parseCodeList(codelistjson);
+          const codelistjson = await fs.readFile(cf);
+          const codelist = parseCodeList(codelistjson);
           codelists.set(path.basename(cf).replace(".json", ""), codelist);
         }
       }
