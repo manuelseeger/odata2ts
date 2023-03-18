@@ -1,4 +1,4 @@
-import { Reference } from './Reference';
+import { Reference } from "./Reference";
 
 export interface Parameter {
   name: string;

@@ -17,11 +17,11 @@ import { Command } from "commander";
     )
     .option(
       "-t, --targetDir <dir>",
-      'target directory for typescript files (default: "out")'
+      "target directory for typescript files (default: \"out\")"
     )
     .option(
       "-m, --metadataExtension <ext>",
-      'file extension of metadata file (default: "xml")'
+      "file extension of metadata file (default: \"xml\")"
     )
     .option("--c4c", "use SAP C4C metadata vocabulary")
     .argument("[source]", "specific metadata file to parse");

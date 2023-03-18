@@ -17,9 +17,12 @@ export class Transformer {
   transform(metadata: Service): string {
     let result = "";
 
-    let entityByNameSpace = _.groupBy(metadata.entityTypes, (v) => v.namespace);
+    const entityByNameSpace = _.groupBy(
+      metadata.entityTypes,
+      (v) => v.namespace
+    );
 
-    for (let namespace of Object.keys(entityByNameSpace)) {
+    for (const namespace of Object.keys(entityByNameSpace)) {
       result += `export namespace ${namespace} {\n`;
       result += entityByNameSpace[namespace]
         .map((t) => this.transformType(t))
@@ -28,12 +31,12 @@ export class Transformer {
     }
 
     if (this.codelists.size > 0) {
-      for (let [enumName, codelist] of this.codelists.entries()) {
+      for (const [enumName, codelist] of this.codelists.entries()) {
         result += this.transformEnums(enumName, codelist);
       }
     }
 
-    let prettierOptions: prettier.Options = {
+    const prettierOptions: prettier.Options = {
       parser: "typescript",
       plugins: [parserTypescript],
     };
@@ -42,7 +45,7 @@ export class Transformer {
   }
 
   transformEnums(enumName: string, codelist: CodeList[]): string {
-    const typeName = !!this.codelists.size
+    const typeName = this.codelists.size
       ? enumName.replace(/Collection$/, "")
       : enumName;
     let result = `export type  ${typeName} = `;

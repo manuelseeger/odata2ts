@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface EntityProperty {
   name: string;
   type?: string;
@@ -6,5 +7,5 @@ export interface EntityProperty {
   $ref?: any;
   enum?: Array<any>;
   wrapValueInQuotesInUrls: boolean;
-  $?:Map<string, string>;
+  $?: Map<string, string>;
 }

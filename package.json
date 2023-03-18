@@ -1,15 +1,36 @@
 {
   "name": "odata2ts",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Generate Typescript types from OData metadata",
   "author": "Manuel Seeger",
   "license": "MIT",
+  "main": "./dist/lib/odata2ts.js",
+  "homepage": "https://github.com/manuelseeger/odata2ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "odata2ts": "./dist/bin/odata2ts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelseeger/odata2ts.git"
+  },
+  "keywords": [
+    "odata",
+    "typescript",
+    "types",
+    "generator"
+  ],
   "scripts": {
     "compile": "tsc -p .",
     "start": "node dist/bin/odata2ts.js example/Northwind$metadata.xml",
     "prestart": "npm run compile",
     "test": "jest",
-    "pretest": "npm run compile"
+    "pretest": "npm run compile",
+    "lint": "eslint \"**\\*.ts\""
   },
   "dependencies": {
     "commander": "^9.4.0",
@@ -25,6 +46,9 @@
     "@types/jest": "^28.1.7",
     "@types/lodash": "^4.14.182",
     "@types/prettier": "^2.6.3",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
     "jest": "^28.1.3",
     "ts-jest": "^28.0.8",
     "typescript": "^4.7.4"

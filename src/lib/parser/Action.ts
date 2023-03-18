@@ -1,7 +1,7 @@
-import { ReturnType } from './ReturnType';
-import { ActionAndFunctionParameter } from './ActionAndFunctionParameter';
+import { ReturnType } from "./ReturnType";
+import { ActionAndFunctionParameter } from "./ActionAndFunctionParameter";
 
-export interface Action {
+export interface ActionImport {
   name: string;
   parameters: Array<ActionAndFunctionParameter>;
   isBound?: boolean;

@@ -50,17 +50,22 @@ export class OData2Ts {
 
     metadataFiles.forEach(async (f) => {
       const types = await this.fileToTypes(f);
-      let outPath = path.join(
-        targetDir,
-        path
-          .basename(f)
-          .replace(new RegExp(this.options.metadataExtension + "$"), "ts")
-      );
+
+      const outFileName = this.getOutFileName(path.basename(f));
+      const outPath = path.join(targetDir, outFileName);
       if (!(await fs.pathExists(path.dirname(outPath)))) {
         await fs.mkdir(path.dirname(outPath));
       }
       await fs.writeFile(outPath, types);
     });
+  }
+
+  getOutFileName(filePath: string): string {
+    if (filePath.includes(".")) {
+      return filePath.split(".").slice(0, -1).join(".") + ".ts";
+    } else {
+      return filePath + ".ts";
+    }
   }
 
   async fileToTypes(filePath: string): Promise<string> {
@@ -78,7 +83,7 @@ export class OData2Ts {
         const globPath = codelistDir.replace(/\\/g, "/") + "/*";
         const codelistFiles = glob.sync(globPath);
 
-        for (let cf of codelistFiles) {
+        for (const cf of codelistFiles) {
           const codelistjson = await fs.readFile(cf);
           const codelist = parseCodeList(codelistjson);
           codelists.set(path.basename(cf).replace(".json", ""), codelist);

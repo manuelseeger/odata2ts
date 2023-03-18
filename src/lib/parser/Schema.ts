@@ -1,5 +1,5 @@
-import { Property } from './Property';
-import { Reference } from './Reference';
+import { Property } from "./Property";
+import { Reference } from "./Reference";
 
 export interface Schema {
   namespace?: string;

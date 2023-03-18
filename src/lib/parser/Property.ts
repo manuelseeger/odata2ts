@@ -1,5 +1,6 @@
-import { Reference } from './Reference';
-import { Schema } from './Schema';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Reference } from "./Reference";
+import { Schema } from "./Schema";
 
 export interface Property {
   type: string;
@@ -9,5 +10,5 @@ export interface Property {
   maximum?: number;
   default?: any;
   items?: Schema | Reference;
-  properties?: {[propertyName: string]: Property};
+  properties?: { [propertyName: string]: Property };
 }

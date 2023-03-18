@@ -33,6 +33,8 @@ const types = await odata2ts.fileToTypes("./example/Northwind$metadata.xml");
 
 Parses entities and properties from OData metadata into Typescript types.
 
+### Limitations
+
 Does not parse actions, functions, navigational properties, annotations, or any OData feature other than entities and properties.
 
 ## SAP C4C vocabulary extensions
@@ -43,6 +45,6 @@ Enable parsing of code lists with the `--c4c` option. The code lists are expecte
 
 ## Acknowledgment
 
-The [parser](src/lib/parser/) for OData metadata to JS was taken over from [elasticio/odata2openapi](https://github.com/elasticio/odata2openapi).
+The [parser](src/lib/parser/) for OData metadata to JS was taken and adapted from [elasticio/odata2openapi](https://github.com/elasticio/odata2openapi).
 
 Handling of SAP C4C vocabulary has been added to the parser. All the heavy lifting has been done by the original authors.

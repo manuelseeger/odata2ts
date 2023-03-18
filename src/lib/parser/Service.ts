@@ -1,8 +1,9 @@
-import { EntitySet } from './EntitySet';
-import { ComplexType } from './ComplexType';
-import { EntityType } from './EntityType';
-import { Action } from './Action';
-import { Function } from './Function';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { EntitySet } from "./EntitySet";
+import { ComplexType } from "./ComplexType";
+import { EntityType } from "./EntityType";
+import { ActionImport } from "./Action";
+import { FunctionImport } from "./Function";
 import { EnumType } from "./EnumType";
 
 export interface Service {
@@ -11,8 +12,8 @@ export interface Service {
   complexTypes: Array<ComplexType>;
   entityTypes: Array<EntityType>;
   singletons: Array<any>;
-  actions: Array<Action>;
-  functions:  Array<Function>;
+  actions: Array<ActionImport>;
+  functions: Array<FunctionImport>;
   enumTypes: Array<EnumType>;
   defaultNamespace: string;
 }

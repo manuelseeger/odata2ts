@@ -1,4 +1,4 @@
-import { EntityProperty } from './EntityProperty';
+import { EntityProperty } from "./EntityProperty";
 
 export interface Singleton {
   name: string;
