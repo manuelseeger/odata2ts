@@ -9,7 +9,8 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "example"
   ],
   "bin": {
     "odata2ts": "./dist/bin/odata2ts.js"
