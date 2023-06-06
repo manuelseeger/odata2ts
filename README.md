@@ -2,6 +2,14 @@
 
 Primitive generator for Typescript types from OData Metadata.
 
+## odata2ts
+
+I created this project originally because I could not find a suitable Typescript generator from OData metadata. 
+
+Since then, I have found a project much larger in scope and quality (also called odata2ts): [@odata2ts/odata2ts](https://github.com/odata2ts/odata2ts). 
+
+@odata2ts/odata2ts is what I am using now exclusively for myself. 
+
 ## Usage
 
 Parse individual file
